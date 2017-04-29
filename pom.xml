@@ -12,31 +12,31 @@
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.charlee.sample</groupId>
-	<artifactId>swarm-arq-jacoco</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+    <groupId>com.charlee.sample</groupId>
+    <artifactId>swarm-arq-jacoco</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-	<name>swarm-arq-jacoco</name>
-	<url>http://maven.apache.org</url>
+    <name>swarm-arq-jacoco</name>
+    <url>http://maven.apache.org</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<my.project.inception.year>2017</my.project.inception.year>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <my.project.inception.year>2017</my.project.inception.year>
 
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		
-		<my.jacoco.maven.version>0.7.9</my.jacoco.maven.version>
-		<my.maven.surefire.version>2.19.1</my.maven.surefire.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        
+        <my.jacoco.maven.version>0.7.9</my.jacoco.maven.version>
+        <my.maven.surefire.version>2.19.1</my.maven.surefire.version>
         <my.maven.surefire.junit.version>2.19.1</my.maven.surefire.junit.version>
         <my.maven.failsafe.version>2.19.1</my.maven.failsafe.version>
  
         <my.javaee.version>7.0</my.javaee.version>
-		
+        
         <my.weld.version>2.4.3.Final</my.weld.version>
         <my.arquillian.version>1.1.13.Final</my.arquillian.version>
         <my.wildfly.swarm.version>2017.4.0</my.wildfly.swarm.version>
@@ -47,7 +47,7 @@
         <my.assertj.version>3.6.2</my.assertj.version>
 
         <my.jacoco.coverage.path>${project.build.directory}/coverage-reports</my.jacoco.coverage.path>
-	</properties>
+    </properties>
 
     <inceptionYear>${my.project.inception.year}</inceptionYear>
 
@@ -62,40 +62,40 @@
     <build>
         <pluginManagement>
             <plugins>
-	            <plugin>
-	                <groupId>org.apache.maven.plugins</groupId>
-	                <artifactId>maven-surefire-plugin</artifactId>
-	                <version>${my.maven.surefire.version}</version>
-	                <dependencies>
-	                   <dependency>
-	                       <groupId>org.apache.maven.surefire</groupId>
-	                       <artifactId>surefire-junit47</artifactId>
-	                       <version>${my.maven.surefire.junit.version}</version>
-	                   </dependency>
-	                </dependencies>
-	                <configuration>
-	                    <encoding>${project.build.sourceEncoding}</encoding>
-	                    <includes>
-	                        <include>
-	                            **/*TestSuite*.java
-	                        </include>
-	                    </includes>
-	                    <excludes>
-	                        <exclude>
-	                            **/*IntgrtnTestSuite*.java
-	                        </exclude>
-	                    </excludes>
-	                    <excludedGroups>
-	                        ${my.integration.test.category}
-	                    </excludedGroups>
-	                    <additionalClasspathElements>
-	                        <additionalClasspathElement>
-	                            ${basedir}/src/test/java
-	                        </additionalClasspathElement>
-	                    </additionalClasspathElements>
-	                    <argLine>${my.jacoco.argLine}</argLine>
-	                </configuration>
-	            </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${my.maven.surefire.version}</version>
+                    <dependencies>
+                       <dependency>
+                           <groupId>org.apache.maven.surefire</groupId>
+                           <artifactId>surefire-junit47</artifactId>
+                           <version>${my.maven.surefire.junit.version}</version>
+                       </dependency>
+                    </dependencies>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <includes>
+                            <include>
+                                **/*TestSuite*.java
+                            </include>
+                        </includes>
+                        <excludes>
+                            <exclude>
+                                **/*IntgrtnTestSuite*.java
+                            </exclude>
+                        </excludes>
+                        <excludedGroups>
+                            ${my.integration.test.category}
+                        </excludedGroups>
+                        <additionalClasspathElements>
+                            <additionalClasspathElement>
+                                ${basedir}/src/test/java
+                            </additionalClasspathElement>
+                        </additionalClasspathElements>
+                        <argLine>${my.jacoco.argLine}</argLine>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
@@ -134,66 +134,66 @@
                         </execution>
                     </executions>
                 </plugin> 
-	            <plugin>
-	                <groupId>org.jacoco</groupId>
-	                <artifactId>jacoco-maven-plugin</artifactId>
-	                <version>${my.jacoco.maven.version}</version>
-	                <executions>
-	                    <execution>
-	                        <id>prepare-agent</id>
-	                        <phase>test-compile</phase>
-	                        <goals>
-	                            <goal>prepare-agent</goal>
-	                        </goals>
-	                    </execution>
-	                    <execution>
-	                        <id>pre-integration-test</id>
-	                        <phase>pre-integration-test</phase>
-	                        <goals>
-	                            <goal>prepare-agent</goal>
-	                        </goals>
-	                        <configuration>
-	                            <destFile>${my.jacoco.coverage.path}/jacoco-it.exec</destFile>
-	                            <dataFile>${my.jacoco.coverage.path}/jacoco-it.exec</dataFile>
-	                            <!--
-	                            The property must be the different name
-	                            with the unittest. If not, we will face the 
-	                            issue about double argLine in surefire and 
-	                            failsafe plugin.
-	                             -->
-	                            <propertyName>my.jacoco.argLineIT</propertyName>
-	                        </configuration>
-	                    </execution>
-	                    <execution>
-	                        <id>post-test</id>
-	                        <phase>post-integration-test</phase>
-	                        <goals>
-	                            <goal>report</goal>
-	                        </goals>
-	                    </execution>
-	                    <execution>
-	                        <id>post-integration-test</id>
-	                        <phase>post-integration-test</phase>
-	                        <goals>
-	                            <goal>report-integration</goal>
-	                        </goals>
-	                        <configuration>
-	                            <dataFile>${my.jacoco.coverage.path}/jacoco-it.exec</dataFile>
-	                            <outputDirectory>${project.reporting.outputDirectory}/jacoco-it</outputDirectory>
-	                        </configuration>
-	                    </execution>
-	                </executions>
-	                <configuration>
-	                    <propertyName>my.jacoco.argLine</propertyName>
-	                    <destFile>${my.jacoco.coverage.path}/jacoco-unit.exec</destFile>
-	                    <dataFile>${my.jacoco.coverage.path}/jacoco-unit.exec</dataFile>
-	                    <excludes>
-	                        <exclude>
-	                            ${my.project.quality.excludes}
-	                        </exclude>
-	                    </excludes>
-	                </configuration>
-	            </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${my.jacoco.maven.version}</version>
+                    <executions>
+                        <execution>
+                            <id>prepare-agent</id>
+                            <phase>test-compile</phase>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>pre-integration-test</id>
+                            <phase>pre-integration-test</phase>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                            <configuration>
+                                <destFile>${my.jacoco.coverage.path}/jacoco-it.exec</destFile>
+                                <dataFile>${my.jacoco.coverage.path}/jacoco-it.exec</dataFile>
+                                <!--
+                                The property must be the different name
+                                with the unittest. If not, we will face the 
+                                issue about double argLine in surefire and 
+                                failsafe plugin.
+                                 -->
+                                <propertyName>my.jacoco.argLineIT</propertyName>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>post-test</id>
+                            <phase>post-integration-test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>post-integration-test</id>
+                            <phase>post-integration-test</phase>
+                            <goals>
+                                <goal>report-integration</goal>
+                            </goals>
+                            <configuration>
+                                <dataFile>${my.jacoco.coverage.path}/jacoco-it.exec</dataFile>
+                                <outputDirectory>${project.reporting.outputDirectory}/jacoco-it</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <propertyName>my.jacoco.argLine</propertyName>
+                        <destFile>${my.jacoco.coverage.path}/jacoco-unit.exec</destFile>
+                        <dataFile>${my.jacoco.coverage.path}/jacoco-unit.exec</dataFile>
+                        <excludes>
+                            <exclude>
+                                ${my.project.quality.excludes}
+                            </exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.wildfly.swarm</groupId>
                     <artifactId>wildfly-swarm-plugin</artifactId>
@@ -219,8 +219,8 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
             </plugin>
             <plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.wildfly.swarm</groupId>
@@ -231,18 +231,18 @@
 
     <dependencyManagement>
         <dependencies>
-	        <dependency>
-	            <groupId>javax</groupId>
-	            <artifactId>javaee-api</artifactId>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
                 <version>${my.javaee.version}</version>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.jboss.arquillian</groupId>
-	            <artifactId>arquillian-bom</artifactId>
-	            <version>${my.arquillian.version}</version>
-	            <scope>import</scope>
-	            <type>pom</type>
-	        </dependency>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>${my.arquillian.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
             <dependency>
                 <groupId>org.wildfly.swarm</groupId>
                 <artifactId>bom-all</artifactId>
