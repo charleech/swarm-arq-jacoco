@@ -1,0 +1,20 @@
+<!--
+
+    Copyright (c) 2017-2017
+
+    This work is licensed under a Creative Commons
+    Attribution-NonCommercial-ShareAlike 4.0 International License.
+
+    https://creativecommons.org/licenses/by-nc-sa/4.0/
+    https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+    https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt
+
+-->
+<arquillian xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://jboss.org/schema/arquillian"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian
+            http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+    <engine>
+        <property name="deploymentExportPath">target/arquillian</property>
+    </engine>
+</arquillian>
