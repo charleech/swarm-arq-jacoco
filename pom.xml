@@ -122,7 +122,10 @@
                                 ${basedir}/src/test/java
                             </additionalClasspathElement>
                         </additionalClasspathElements>
-                        <argLine>${my.jacoco.argLineIT}</argLine>
+                        <!--argLine>${my.jacoco.argLineIT}</argLine-->
+                        <systemPropertyVariables>
+                            <jacoco.test>${my.jacoco.argLineIT}</jacoco.test>
+                        </systemPropertyVariables>
                     </configuration>
                     <executions>
                         <execution>

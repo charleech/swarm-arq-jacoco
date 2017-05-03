@@ -17,4 +17,9 @@
     <engine>
         <property name="deploymentExportPath">target/arquillian</property>
     </engine>
+    <container qualifier="daemon" default="true">
+        <configuration>
+            <property name="javaVmArguments">${jacoco.test}</property>
+        </configuration>
+    </container>
 </arquillian>
